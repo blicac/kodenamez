@@ -1,5 +1,6 @@
 import React from 'react';
-import Card from '../Card/Card'
+import Card from '../Card/Card';
+import './Board.css';
 
 
 const board = (props) => {
@@ -14,7 +15,7 @@ const board = (props) => {
     })
 
     return (
-        <div>
+        <div className='Board'>
             {cards}
         </div>
     );

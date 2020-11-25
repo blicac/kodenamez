@@ -5,9 +5,9 @@ import Board from './Board/Board';
 class App extends Component {
   state = {
     words: [
-      {id: '0', name: "incididunt"},
+      {id: '0', name: "incididunt blahblah"},
       {id: '1', name: "fëj"},
-      {id: '2', name: "id"},
+      {id: '2', name: "idhuhuahah"},
       {id: '3', name: "in"},
       {id: '4', name: "aliquip"},
       {id: '5', name: "irure"},
