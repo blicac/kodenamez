@@ -34,7 +34,7 @@ class App extends Component {
 
 
   cardClicked = (id) => {
-    //console.log(id);
+
     const cardIndex = this.state.cards.findIndex(p => {
       return p.id === id;
     });
@@ -42,12 +42,14 @@ class App extends Component {
     const card = {
       ...this.state.cards[cardIndex]
     };
-
-    card.isFlipped = true;
-    const cards = [...this.state.cards];
-    cards[cardIndex] = card;
-
-    this.setState({ cards: cards });
+    if(!card.isFlipped){
+      card.isFlipped = true;
+      const cards = [...this.state.cards];
+      cards[cardIndex] = card;
+  
+      this.setState({ cards: cards });
+    }
+  
   }
     
   render() {
