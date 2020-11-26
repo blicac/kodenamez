@@ -4,13 +4,15 @@ import './Board.css';
 
 
 const board = (props) => {
-    const cards = props.words.map((word)=>{
-        console.log(word.name);
+    const cards = props.cards.map((card)=>{
+      //  console.log(card.word);
         return (
             <Card 
-                key={word.id} 
-                word={word.name}
-                clicked = {()=>props.cardClicked(word.id)}
+                key={card.id} 
+                word={card.word}
+                isFlipped={card.isFlipped}
+                color={card.color}
+                clicked = {()=>props.cardClicked(card.id)}
             />);
     })
 

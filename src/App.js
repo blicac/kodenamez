@@ -4,44 +4,57 @@ import Board from './Board/Board';
 
 class App extends Component {
   state = {
-    words: [
-      {id: '0', name: "incididunt blahblah"},
-      {id: '1', name: "fëj"},
-      {id: '2', name: "idhuhuahah"},
-      {id: '3', name: "in"},
-      {id: '4', name: "aliquip"},
-      {id: '5', name: "irure"},
-      {id: '6', name: "nostrud"},
-      {id: '7', name: "anürb"},
-      {id: '8', name: "culpa"},
-      {id: '9', name: "eiusmod"},
-      {id: '10', name: "quis"},
-      {id: '11', name: "dolor"},
-      {id: '12', name: "non"},
-      {id: '13', name: "irure"},
-      {id: '14', name: "banana"},
-      {id: '15', name: "tempor"},
-      {id: '16', name: "duis"},
-      {id: '17', name: "nisi"},
-      {id: '18', name: "esse"},
-      {id: '19', name: "cake"},
-      {id: '20', name: "in"},
-      {id: '21', name: "culpa"},
-      {id: '22', name: "laborum"},
-      {id: '23', name: "qui"},
-      {id: '24', name: "occaecat"}
+    cards: [
+      {id: '0', word: "incididunt blahblah", isFlipped: false, color: 'blue'},
+      {id: '1', word: "fëj", isFlipped: false, color: 'blue'},
+      {id: '2', word: "idhuhuahah", isFlipped: false, color: 'blue'},
+      {id: '3', word: "in", isFlipped: false, color: 'blue'},
+      {id: '4', word: "aliquip", isFlipped: false, color: 'blue'},
+      {id: '5', word: "irure", isFlipped: false, color: 'blue'},
+      {id: '6', word: "nostrud", isFlipped: false, color: 'blue'},
+      {id: '7', word: "anürb", isFlipped: false, color: 'blue'},
+      {id: '8', word: "culpa", isFlipped: false, color: 'red'},
+      {id: '9', word: "eiusmod", isFlipped: false, color: 'red'},
+      {id: '10', word: "quis", isFlipped: false, color: 'red'},
+      {id: '11', word: "dolor", isFlipped: false, color: 'red'},
+      {id: '12', word: "non", isFlipped: false, color: 'red'},
+      {id: '13', word: "irure", isFlipped: false, color: 'red'},
+      {id: '14', word: "banana", isFlipped: false, color: 'red'},
+      {id: '15', word: "tempor", isFlipped: false, color: 'red'},
+      {id: '16', word: "duis", isFlipped: false, color: 'assassin'},
+      {id: '17', word: "nisi", isFlipped: false, color: 'random'},
+      {id: '18', word: "esse", isFlipped: false, color: 'random'},
+      {id: '19', word: "cake", isFlipped: false, color: 'random'},
+      {id: '20', word: "in", isFlipped: false, color: 'random'},
+      {id: '21', word: "culpa", isFlipped: false, color: 'random'},
+      {id: '22', word: "laborum", isFlipped: false, color: 'random'},
+      {id: '23', word: "qui", isFlipped: false, color: 'random'},
+      {id: '24', word: "occaecat", isFlipped: false, color: 'random'}
     ]}
 
 
   cardClicked = (id) => {
-    console.log(id);
+    //console.log(id);
+    const cardIndex = this.state.cards.findIndex(p => {
+      return p.id === id;
+    });
+
+    const card = {
+      ...this.state.cards[cardIndex]
+    };
+
+    card.isFlipped = true;
+    const cards = [...this.state.cards];
+    cards[cardIndex] = card;
+
+    this.setState({ cards: cards });
   }
     
   render() {
    return (
       <div className="App">
         <Board 
-          words = {this.state.words} 
+          cards = {this.state.cards} 
           cardClicked = {(id)=> this.cardClicked(id)}
           />
   

@@ -6,3 +6,19 @@
     padding: 16px;
     text-align: center;
 }
+
+.Blue {
+    background-color: SteelBlue;
+}
+
+.Red {
+    background-color: LightCoral;
+}
+
+.Beige {
+    background-color: BlanchedAlmond;
+}
+
+.Grey {
+    background-color: SlateGrey;
+}
