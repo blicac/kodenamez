@@ -5,7 +5,7 @@ import './Board.css';
 
 const board = (props) => {
     const cards = props.cards.map((card)=>{
-      //  console.log(card.word);
+
         return (
             <Card 
                 key={card.id} 
