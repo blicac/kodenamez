@@ -8,7 +8,7 @@ const card = (props) => {
     const ASSASSIN = 'assassin';
 
     let cardColor = '';
-console.log('color',props.isFlipped,props.color)
+
     if(props.isFlipped) {
         switch(props.color) {
             case BLUE:
@@ -23,7 +23,7 @@ console.log('color',props.isFlipped,props.color)
             case ASSASSIN:
                 cardColor = 'Grey';
                 break;
-            default: console.log("default")
+            default: 
         }
     }
     let cardClass = 'Card '+ cardColor;
