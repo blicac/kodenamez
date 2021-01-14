@@ -1,4 +1,4 @@
-# Foobar
+# kodenamez
 
 kodenamez is an implementation of the original codenames game: a game of guessing which codenames (i.e., words) in a set are related to a hint-word given by another player. Wiki [here](https://en.wikipedia.org/wiki/Codenames_(board_game))
 
